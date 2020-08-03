@@ -119,7 +119,7 @@ bin: this folder has `demo.mp4` file which can be used to test model
 * [Pakeeza](https://github.com/Hotaru29)
 
 ### Future Goals:
-1. Create Pipeline for Getting Eye Gaze Coordinates for Excersice Video
-2. Create Pipeline and UI for Webcam Video
-3. Develop Score Computation Logic
-4. Develop UI
+- [x] Create Pipeline for Getting Eye Gaze Coordinates for Excersice Video
+- [ ] Create Pipeline and UI for Webcam Video
+- [ ] Develop Score Computation Logic
+- [ ] Develop UI
