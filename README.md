@@ -112,3 +112,9 @@ This folder has 4 model class files, This class files has methods to load model 
 * `banchmark.ipynb`, `computer_controller_job.sh`, and `PrecisionComparsion.ipynb` are for banchmarking result generation for different hardware and model comparison
 
 bin: this folder has `demo.mp4` file which can be used to test model
+
+### Future Goals:
+1. Create Pipeline for Getting Eye Gaze Coordinates for Excersice Video
+2. Create Pipeline and UI for Webcam Video
+3. Develop Score Computation Logic
+4. Develop UI
