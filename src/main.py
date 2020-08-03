@@ -3,6 +3,7 @@ import os
 import logging
 import time
 import numpy as np
+import pandas as pd
 from input_feeder import InputFeeder
 from face_detection_model import FaceDetectionModel
 from landmark_detection_model import LandmarkDetectionModel
@@ -147,6 +148,7 @@ def main():
                                 (1920, 1080), True)
 
     frame_count = 0
+    gaze_vectors = []
     start_inference_time = time.time()
     for ret, frame in feeder.next_batch():
 
@@ -169,6 +171,7 @@ def main():
             left_eye_image, right_eye_image, eye_cords = landmark_detection_model.predict(cropped_image)
             pose_output = head_pose_estimation_model.predict(cropped_image)
             mouse_cord, gaze_vector = gaze_estimation_model.predict(left_eye_image, right_eye_image, pose_output)
+            gaze_vectors.append(gaze_vector)
 
         except Exception as e:
             logger.warning("Could predict using model" + str(e) + " for frame " + str(frame_count))
@@ -202,6 +205,8 @@ def main():
         f.write(str(fps) + '\n')
         f.write(str(total_model_load_time) + '\n')
 
+    gaze_df = pd.DataFrame(gaze_vectors, columns=['vector_x', 'vector_y', 'vector_z'])
+    gaze_df.to_csv("gaze_vectors_excercise_video.csv", index=False)
     logger.info('Model load time: ' + str(total_model_load_time))
     logger.info('Inference time: ' + str(total_inference_time))
     logger.info('FPS: ' + str(fps))
