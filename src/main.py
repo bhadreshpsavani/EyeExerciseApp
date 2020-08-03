@@ -4,7 +4,6 @@ import logging
 import time
 import numpy as np
 from input_feeder import InputFeeder
-from mouse_controller import MouseController
 from face_detection_model import FaceDetectionModel
 from landmark_detection_model import LandmarkDetectionModel
 from head_pose_estimation_model import HeadPoseEstimationModel
@@ -134,9 +133,6 @@ def main():
     head_pose_estimation_model = HeadPoseEstimationModel(model_path_dict['HeadPoseEstimationModel'], device_name, threshold=prob_threshold)
     gaze_estimation_model = GazeEstimationModel(model_path_dict['GazeEstimationModel'], device_name, threshold=prob_threshold)
 
-    if not is_benchmarking:
-        mouse_controller = MouseController('medium', 'fast')
-
     # load Models
     start_model_load_time = time.time()
     face_detection_model.load_model()
@@ -188,9 +184,6 @@ def main():
 
         cv2.imshow('preview', image)
         out_video.write(frame)
-
-        if frame_count % 5 == 0 and not is_benchmarking:
-            mouse_controller.move(mouse_cord[0], mouse_cord[1])
 
         if key == 27:
             break
