@@ -195,16 +195,17 @@ def main():
     total_inference_time = round(total_time, 1)
     fps = frame_count / total_inference_time
 
+"""
     try:
         os.mkdir(output_path)
     except OSError as error:
         logger.error(error)
-
+        
     with open(output_path+'stats.txt', 'w') as f:
         f.write(str(total_inference_time) + '\n')
         f.write(str(fps) + '\n')
         f.write(str(total_model_load_time) + '\n')
-
+"""
     gaze_df = pd.DataFrame(gaze_vectors, columns=['vector_x', 'vector_y', 'vector_z'])
     gaze_df.to_csv("gaze_vectors_excercise_video.csv", index=False)
     logger.info('Model load time: ' + str(total_model_load_time))
