@@ -113,6 +113,11 @@ This folder has 4 model class files, This class files has methods to load model 
 
 bin: this folder has `demo.mp4` file which can be used to test model
 
+### Team:
+* [Bhadresh Savani](https://github.com/bhadreshpsavani)
+* [Shudipto Trafder](https://github.com/Iamsdt)
+* [Pakeeza](https://github.com/Hotaru29)
+
 ### Future Goals:
 1. Create Pipeline for Getting Eye Gaze Coordinates for Excersice Video
 2. Create Pipeline and UI for Webcam Video
