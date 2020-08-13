@@ -205,7 +205,7 @@ def main():
     cv2.destroyAllWindows()
     feeder.close()
 
-"""
+    """
     try:
         os.mkdir(output_path)
     except OSError as error:
@@ -215,7 +215,7 @@ def main():
         f.write(str(total_inference_time) + '\n')
         f.write(str(fps) + '\n')
         f.write(str(total_model_load_time) + '\n')
-"""
+    """
 
 
 
