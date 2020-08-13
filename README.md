@@ -117,6 +117,7 @@ bin: this folder has `demo.mp4` file which can be used to test model
 * [Bhadresh Savani](https://github.com/bhadreshpsavani)
 * [Shudipto Trafder](https://github.com/Iamsdt)
 * [Pakeeza](https://github.com/Hotaru29)
+* [Erin Song](https://www.linkedin.com/in/erinsong1/)
 
 ### Road Map:
 - [x] Create End to End Pipeline to Extract Eye Gaze Coordinates
