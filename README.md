@@ -115,9 +115,9 @@ bin: this folder has `demo.mp4` file which can be used to test model
 
 ### Team:
 * [Bhadresh Savani](https://github.com/bhadreshpsavani)
-* [Richa](https://www.linkedin.com/in/richaphd/)
 * [Pakeeza](https://github.com/Hotaru29)
 * [Erin Song](https://www.linkedin.com/in/erinsong1/)
+* [Richa](https://www.linkedin.com/in/richaphd/)
 * [Jose Mariscal](https://github.com/jgmarsm) 
 
 ### Road Map:
