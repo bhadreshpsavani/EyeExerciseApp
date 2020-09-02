@@ -102,6 +102,7 @@ def main():
     logger = logging.getLogger('main')
 
     is_benchmarking = False
+
     # initialize variables with the input arguments for easy access
     model_path_dict = {
         'FaceDetectionModel': args.faceDetectionModel,
@@ -115,6 +116,11 @@ def main():
     prob_threshold = args.prob_threshold
     output_path = args.output_path
 
+    exercise_video_path = '../bin/demo.mp4'
+    exercise_gaze_path = '../bin/demo.csv'
+
+    exercise_gaze_df = pd.read_csv(exercise_gaze_path)
+
     if input_filename.lower() == 'cam':
         feeder = InputFeeder(input_type='cam')
     else:
@@ -122,6 +128,8 @@ def main():
             logger.error("Unable to find specified video file")
             exit(1)
         feeder = InputFeeder(input_type='video', input_file=input_filename)
+
+    exercise_feeder = InputFeeder(input_type='video', input_file=exercise_video_path)
 
     for model_path in list(model_path_dict.values()):
         if not os.path.isfile(model_path):
@@ -143,16 +151,23 @@ def main():
     total_model_load_time = time.time() - start_model_load_time
 
     feeder.load_data()
+    exercise_feeder.load_data()
 
     out_video = cv2.VideoWriter(os.path.join('output_video.mp4'), cv2.VideoWriter_fourcc(*'avc1'), int(feeder.get_fps()/10),
-                                (1920, 1080), True)
+                                (1000, 500), True)
 
     frame_count = 0
     gaze_vectors = []
     start_inference_time = time.time()
     for ret, frame in feeder.next_batch():
 
+        ex_ret, ex_frame = next(exercise_feeder.next_batch())
+
         if not ret:
+            break
+
+        # This will stop the cam when exercise video is over
+        if len(exercise_gaze_df) <= len(gaze_vectors):
             break
 
         frame_count += 1
@@ -183,24 +198,28 @@ def main():
             preview_frame = draw_preview(
                 frame, preview_flags, cropped_image, left_eye_image, right_eye_image,
                 face_cords, eye_cords, pose_output, gaze_vector)
-            image = np.hstack((cv2.resize(frame, (500, 500)), cv2.resize(preview_frame, (500, 500))))
+            image = np.hstack((cv2.resize(ex_frame, (500, 500)), cv2.resize(preview_frame, (500, 500))))
 
         cv2.imshow('preview', image)
-        out_video.write(frame)
+        out_video.write(image)
 
-        if key == 27:
+        if key == 0:
             break
 
     total_time = time.time() - start_inference_time
     total_inference_time = round(total_time, 1)
     fps = frame_count / total_inference_time
 
+    if input_filename=="cam":
+        filename = "cam.csv"
+    else:
+        filename = input_filename.split("/")[-1].split(".")[0]+".csv"
+
     gaze_df = pd.DataFrame(gaze_vectors, columns=['vector_x', 'vector_y', 'vector_z'])
-    gaze_df.to_csv("gaze_vectors_excercise_video.csv", index=False)
+    gaze_df.to_csv(filename, index=False)
     logger.info('Model load time: ' + str(total_model_load_time))
     logger.info('Inference time: ' + str(total_inference_time))
     logger.info('FPS: ' + str(fps))
-
     logger.info('Video stream ended')
     cv2.destroyAllWindows()
     feeder.close()
@@ -216,8 +235,6 @@ def main():
         f.write(str(fps) + '\n')
         f.write(str(total_model_load_time) + '\n')
     """
-
-
 
 if __name__ == '__main__':
     main()
