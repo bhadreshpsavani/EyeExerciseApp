@@ -117,6 +117,7 @@ def main():
     prob_threshold = args.prob_threshold
     output_path = args.output_path
 
+    # add path for exercise video data
     exercise_video_path = '../bin/demo.mp4'
     exercise_gaze_path = '../bin/demo.csv'
 
