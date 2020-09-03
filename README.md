@@ -96,6 +96,9 @@ Command Line Argument Information:
 ### Project Structure:
 
 ![project_structure](/imgs/project_structure.png)
+**bin**: This folder has `demo.mp4` file which we are using for Eye Excercise Video
+
+**imgs**: It contains images used in this project for documentations and results
 
 **intel**: This folder contains Machine Learning models in IR(Intermediate Representation) format
 
@@ -109,8 +112,6 @@ This class files has methods to load model and perform inference.
   * `head_pose_estimation_model.py`
 * `main.py` file used to run complete pipeline of project. It calls has object of all the other class files in the folder
 * `input_feeder.py` is utility to load local video or webcam feed
-
-**bin**: this folder has `demo.mp4` file which we are using for Eye Excercise Video
 
 ## Team:
 * [Bhadresh Savani](https://github.com/bhadreshpsavani)
