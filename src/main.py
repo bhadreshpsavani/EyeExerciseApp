@@ -163,6 +163,8 @@ def main():
     start_inference_time = time.time()
     for ret, frame in feeder.next_batch():
 
+        # flip the image to make it similar to video image
+        frame = np.flip(frame, 1)
         ex_ret, ex_frame = next(exercise_feeder.next_batch())
 
         if not ret:
@@ -195,20 +197,21 @@ def main():
             continue
 
         # image = cv2.resize(frame, (500, 500))
+        # frame = np.flip(frame, 1)
 
         # if not len(preview_flags) == 0:
         #     preview_frame = draw_preview(
-        #         frame, preview_flags, cropped_image, left_eye_image, right_eye_image,
+        #         frame, 'ff', cropped_image, left_eye_image, right_eye_image,
         #         face_cords, eye_cords, pose_output, gaze_vector)
-        #     image = np.hstack((cv2.resize(ex_frame, (500, 500)), cv2.resize(preview_frame, (500, 500))))
+        #     # image = np.hstack((cv2.resize(ex_frame, (500, 500)), cv2.resize(preview_frame, (500, 500))))
 
         score = cosine(exercise_gaze_df.iloc[frame_count-1], gaze_vector)
         if score > 0.1:
             total_score += 1
 
         # show score on output video
-        cv2.putText(ex_frame, "Score : {}".format(total_score), (20, 40), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 0), 2)
-        image = np.hstack((cv2.resize(ex_frame, (500, 500)), cv2.resize(frame, (500, 500))))
+        cv2.putText(ex_frame, "Gaze Match Score : {}".format(total_score), (20, 40), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 0), 2)
+        image = np.hstack((cv2.resize(ex_frame, (500, 500)), cv2.resize(cropped_image, (500, 500))))
 
         cv2.imshow('preview', image)
         out_video.write(image)
