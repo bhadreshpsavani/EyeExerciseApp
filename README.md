@@ -6,10 +6,10 @@ Our aim is to make an Exercise Assistant Application which can help to increase 
 
 We have used Four Pretrained Machine Learning Models from Intel Openvino Toolkit:
 
-* [Face Detection](https://docs.openvinotoolkit.org/latest/_models_intel_face_detection_adas_binary_0001_description_face_detection_adas_binary_0001.html): Detects face coordinates from Video or Webcam images
-* [Head Pose Estimation](https://docs.openvinotoolkit.org/latest/_models_intel_head_pose_estimation_adas_0001_description_head_pose_estimation_adas_0001.html): Detect Pose coordinates for Head
-* [Facial Landmarks Detection](https://docs.openvinotoolkit.org/latest/_models_intel_landmarks_regression_retail_0009_description_landmarks_regression_retail_0009.html): Gives coordinates or location for facial landmarks like Eyes, Nose and Mouth
-* [Gaze Detection Model](https://docs.openvinotoolkit.org/latest/_models_intel_gaze_estimation_adas_0002_description_gaze_estimation_adas_0002.html): Takes Head Pose Coordinates and Eye Landmark as input and predict Gaze Vector
+1. [Face Detection](https://docs.openvinotoolkit.org/latest/_models_intel_face_detection_adas_binary_0001_description_face_detection_adas_binary_0001.html): Detects face coordinates from Video or Webcam images
+2. [Head Pose Estimation](https://docs.openvinotoolkit.org/latest/_models_intel_head_pose_estimation_adas_0001_description_head_pose_estimation_adas_0001.html): Detects Pose coordinates for Head
+3. [Facial Landmarks Detection](https://docs.openvinotoolkit.org/latest/_models_intel_landmarks_regression_retail_0009_description_landmarks_regression_retail_0009.html): Gives coordinates or location for facial landmarks like Eyes, Nose and Mouth
+4. [Gaze Detection Model](https://docs.openvinotoolkit.org/latest/_models_intel_gaze_estimation_adas_0002_description_gaze_estimation_adas_0002.html): Takes Head Pose Coordinates and Eye Landmark as input and predicts Gaze Vector
 
 ### The Pipeline:
 ![pipeline](/imgs/pipeline.png)
@@ -27,7 +27,7 @@ We compare Eye Gaze Vector of Instructor and User using Cosine Similarity.
 
 ## Project Set Up and Installation:
 
-Step1: Download below three softwares:
+Step1. Download below three softwares:
 1. Microsoft Visual Studio* with C++ 2019, 2017, or 2015 with MSBuild
 2. CMake 3.4 or higher 64-bit
 NOTE: If you want to use Microsoft Visual Studio 2019, you are required to install CMake 3.14.
@@ -35,19 +35,19 @@ NOTE: If you want to use Microsoft Visual Studio 2019, you are required to insta
 
 Step2. Download **[OpenVino Toolkit 2020.1](https://docs.openvinotoolkit.org/latest/index.html)** with all the prerequisites by following this [installation guide](https://docs.openvinotoolkit.org/2020.1/_docs_install_guides_installing_openvino_windows.html)
 
-Step3: Setup OpenVino Toolkit using below command in command prompt
+Step3. Setup OpenVino Toolkit using below command in command prompt
 ```
 cd C:\Program Files (x86)\IntelSWTools\openvino\bin\
 setupvars.bat
 ```
 
-Step4: Configure Model Optimizer using below commnads in command prompt
+Step4. Configure Model Optimizer using below commnads in command prompt
 ```
 cd C:\Program Files (x86)\IntelSWTools\openvino\deployment_tools\model_optimizer\install_prerequisites
 install_prerequisites.bat
 ```
 
-Step5: Varify installation
+Step5. Varify installation
 ```
 cd C:\Program Files (x86)\IntelSWTools\openvino\deployment_tools\demo\
 demo_squeezenet_download_convert_run.bat
@@ -97,19 +97,20 @@ Command Line Argument Information:
 
 ![project_structure](/imgs/project_structure.png)
 
-intel: This folder contains models in IR format downloaded from Openvino Model Zoo
+**intel**: This folder contains Machine Learning models in IR(Intermediate Representation) format
 
-src: This folder contains model files, pipeline file(main.py) and utilities 
+**src**: This folder contains model files, pipeline file(main.py) and utilities 
 * `model.py` is the model class file which has common property of all the other model files. It is inherited by all the other model files 
-This folder has 4 model class files, This class files has methods to load model and perform inference.
-* `face_detection_model.py`
-* `gaze_estimation_model.py`
-* `landmark_detection_model.py`
-* `head_pose_estimation_model.py`
+This folder has 4 model class files, 
+This class files has methods to load model and perform inference.
+  * `face_detection_model.py`
+  * `gaze_estimation_model.py`
+  * `landmark_detection_model.py`
+  * `head_pose_estimation_model.py`
 * `main.py` file used to run complete pipeline of project. It calls has object of all the other class files in the folder
 * `input_feeder.py` is utility to load local video or webcam feed
 
-bin: this folder has `demo.mp4` file which used for Eye Excercise Video
+**bin**: this folder has `demo.mp4` file which we are using for Eye Excercise Video
 
 ### Team:
 * [Bhadresh Savani](https://github.com/bhadreshpsavani)
