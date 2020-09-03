@@ -1,26 +1,29 @@
 # Eye Excercise App
+Our aim is to make an Exercise Assistant Application which can help to increase effectiveness of Eye Excercise. We Detect eye gaze of user using Computer Vision and Pretrained Machine Learning model. we check it with eye gaze corrdianates of Instructor and show user a live score of Excercise Effectiveness. We also want our Exercise Assistant to be voice enabled to instruct and motivate users for Excercise.
 
-In this project, you will use a [Gaze Detection Model](https://docs.openvinotoolkit.org/latest/_models_intel_gaze_estimation_adas_0002_description_gaze_estimation_adas_0002.html) to estimate the gaze of the user's eyes. This will help us to Get Score based on Eye Gaze of Excercise Video person and User.
-
-You will be using the InferenceEngine API from Intel's OpenVino ToolKit to build the project. The gaze estimation model requires three inputs:
-
-* The head pose
-* The left eye image
-* The right eye image.
-
-Below Image shows how we detect Eye Gaze, 
+## How we get Eye Gaze Vectors:
 ![demoVideo](/bin/output_video.gif)
 
-To get these inputs, you will have to use three other OpenVino models:
+We have used Four Pretrained Machine Learning Models from Intel Openvino Toolkit:
 
-* [Face Detection](https://docs.openvinotoolkit.org/latest/_models_intel_face_detection_adas_binary_0001_description_face_detection_adas_binary_0001.html)
-* [Head Pose Estimation](https://docs.openvinotoolkit.org/latest/_models_intel_head_pose_estimation_adas_0001_description_head_pose_estimation_adas_0001.html)
-* [Facial Landmarks Detection](https://docs.openvinotoolkit.org/latest/_models_intel_landmarks_regression_retail_0009_description_landmarks_regression_retail_0009.html)
+* [Face Detection](https://docs.openvinotoolkit.org/latest/_models_intel_face_detection_adas_binary_0001_description_face_detection_adas_binary_0001.html): Detects face coordinates from Video or Webcam images
+* [Head Pose Estimation](https://docs.openvinotoolkit.org/latest/_models_intel_head_pose_estimation_adas_0001_description_head_pose_estimation_adas_0001.html): Detect Pose coordinates for Head
+* [Facial Landmarks Detection](https://docs.openvinotoolkit.org/latest/_models_intel_landmarks_regression_retail_0009_description_landmarks_regression_retail_0009.html): Gives coordinates or location for facial landmarks like Eyes, Nose and Mouth
+* [Gaze Detection Model](https://docs.openvinotoolkit.org/latest/_models_intel_gaze_estimation_adas_0002_description_gaze_estimation_adas_0002.html): Takes Head Pose Coordinates and Eye Landmark as input and predict Gaze Vector
 
 ### The Pipeline:
-You will have to coordinate the flow of data from the input, and then amongst the different models and finally to the mouse controller. The flow of data will look like this:
-
 ![pipeline](/imgs/pipeline.png)
+
+
+## How we get Exercise Score:
+We compare Eye Gaze Vector of Instructor and User using Cosine Similarity. 
+```
+>> from scipy.spatial.distance import cosine
+>> eye_gaze_instructor = [ 0.62916321,  0.10232677, -0.77875257]
+>> eye_gaze_user = [ 0.09647849,  0.03398839, -0.82852501]
+>> cosine(eye_gaze_instructor, eye_gaze_user)
+0.15561332345537238
+```
 
 ## Project Set Up and Installation:
 
@@ -121,5 +124,6 @@ bin: this folder has `demo.mp4` file which used for Eye Excercise Video
 - [x] Create Pipeline and UI for Webcam Video
 - [x] Develop Score Computation Logic
 - [x] Develop UI for Comuter to View Output and Score
+- [ ] Enable App with Voice Assistance
 - [ ] Deploy Application to Azure Cloud
-
+- [ ] Create a Mobile App
