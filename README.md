@@ -108,11 +108,9 @@ This folder has 4 model class files, This class files has methods to load model 
 * `landmark_detection_model.py`
 * `head_pose_estimation_model.py`
 * `main.py` file used to run complete pipeline of project. It calls has object of all the other class files in the folder
-* `mouse_controller.py` is utility to move mouse curser based on mouse coordinates received from  `gaze_estimation_model` class predict method.
 * `input_feeder.py` is utility to load local video or webcam feed
-* `banchmark.ipynb`, `computer_controller_job.sh`, and `PrecisionComparsion.ipynb` are for banchmarking result generation for different hardware and model comparison
 
-bin: this folder has `demo.mp4` file which can be used to test model
+bin: this folder has `demo.mp4` file which used for Eye Excercise Video
 
 ### Team:
 * [Bhadresh Savani](https://github.com/bhadreshpsavani)
