@@ -112,14 +112,14 @@ This class files has methods to load model and perform inference.
 
 **bin**: this folder has `demo.mp4` file which we are using for Eye Excercise Video
 
-### Team:
+## Team:
 * [Bhadresh Savani](https://github.com/bhadreshpsavani)
 * [Pakeeza](https://github.com/Hotaru29)
 * [Erin Song](https://www.linkedin.com/in/erinsong1/)
 * [Richa](https://www.linkedin.com/in/richaphd/)
 * [Jose Mariscal](https://github.com/jgmarsm) 
 
-### Road Map:
+## Road Map:
 - [x] Create End to End Pipeline to Extract Eye Gaze Coordinates
 - [x] Create Pipeline for Getting Eye Gaze Coordinates for Excersice Video
 - [x] Create Pipeline and UI for Webcam Video
