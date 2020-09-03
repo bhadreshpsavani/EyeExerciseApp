@@ -8,6 +8,7 @@ You will be using the InferenceEngine API from Intel's OpenVino ToolKit to build
 * The left eye image
 * The right eye image.
 
+Below Image shows how we detect Eye Gaze, 
 ![demoVideo](/bin/output_video.gif)
 
 To get these inputs, you will have to use three other OpenVino models:
@@ -123,8 +124,8 @@ bin: this folder has `demo.mp4` file which can be used to test model
 ### Road Map:
 - [x] Create End to End Pipeline to Extract Eye Gaze Coordinates
 - [x] Create Pipeline for Getting Eye Gaze Coordinates for Excersice Video
-- [ ] Create Pipeline and UI for Webcam Video
-- [ ] Develop Score Computation Logic
-- [ ] Develop UI
+- [x] Create Pipeline and UI for Webcam Video
+- [x] Develop Score Computation Logic
+- [x] Develop UI for Comuter to View Output and Score
 - [ ] Deploy Application to Azure Cloud
 
