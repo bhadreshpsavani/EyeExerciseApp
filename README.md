@@ -79,18 +79,14 @@ cd src
 
 Step6. Run below commands to execute the project
 ```
-python main.py -fd ../intel/face-detection-adas-binary-0001/FP32-INT1/face-detection-adas-binary-0001.xml -lr ../intel/landmarks-regression-retail-0009/FP32-INT8/landmarks-regression-retail-0009.xml -hp ../intel/head-pose-estimation-adas-0001/FP32-INT8/head-pose-estimation-adas-0001.xml -ge ../intel/gaze-estimation-adas-0002/FP32-INT8/gaze-estimation-adas-0002.xml -i ../bin/demo.mp4 -flags ff fl fh fg
+python main.py -fd ../intel/face-detection-adas-binary-0001/FP32-INT1/face-detection-adas-binary-0001.xml -lr ../intel/landmarks-regression-retail-0009/FP32-INT8/landmarks-regression-retail-0009.xml -hp ../intel/head-pose-estimation-adas-0001/FP32-INT8/head-pose-estimation-adas-0001.xml -ge ../intel/gaze-estimation-adas-0002/FP32-INT8/gaze-estimation-adas-0002.xml -i cam
 ```
 Command Line Argument Information:
 - fd : Specify path of xml file of face detection model
 - lr : Specify path of xml file of landmark regression model
 - hp : Specify path of xml file of Head Pose Estimation model
 - ge : Specify path of xml file of Gaze Estimation model
-- i : Specify path of input Video file or cam for Webcam
-- flags (Optional): if you want to see preview video in separate window you need to Specify flag from ff, fl, fh, fg like -flags ff fl...(Space seperated if multiple values) ff for faceDetectionModel, fl for landmarkRegressionModel, fh for headPoseEstimationModel, fg for gazeEstimationModel
-- probs (Optional): if you want to specify confidence threshold for face detection, you can specify the value here in range(0, 1),  default=0.6
-- d (Optional): Specify Device for inference, the device can be CPU, GPU, FPGU, MYRID
-- o : Specify path of output folder where we will store results
+- i : cam for Webcam
  
 ## Documentation: 
 
