@@ -2,7 +2,7 @@
 Our aim is to make an Exercise Assistant Application which can help to increase effectiveness of Eye Excercise. We Detect eye gaze of user using Computer Vision and Pretrained Machine Learning model. we check it with eye gaze corrdianates of Instructor and show user a live score of Excercise Effectiveness. We also want our Exercise Assistant to be voice enabled to instruct and motivate users for Excercise.
 
 ## How we get Eye Gaze Vectors:
-![demoVideo](/bin/output_video.gif)
+![demoVideo](/bin/gaze_detection.gif)
 
 We have used Four Pretrained Machine Learning Models from Intel Openvino Toolkit:
 
@@ -58,6 +58,7 @@ Above command should give output like this image
 
 ## 🔎Demo:
 
+### Instructions: 
 Step1. Clone the Repository using `git clone https://github.com/bhadreshpsavani/Computer-Pointer-Controller.git`
 
 Step2. Create Virtual Environment using command `python -m venv base` in the command prompt, then activate environment using below command,
@@ -90,7 +91,10 @@ Command Line Argument Information:
 - hp : Specify path of xml file of Head Pose Estimation model
 - ge : Specify path of xml file of Gaze Estimation model
 - i : cam for Webcam
- 
+
+### Output:
+![demoVideo](/bin/output.gif)
+
 ## 📚Documentation: 
 
 ### Project Structure:
