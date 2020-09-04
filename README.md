@@ -1,4 +1,4 @@
-# 🌱 Eye Excercise App🏋️🚴:
+# 🏋️Eye Excercise App🚴:
 Our aim is to make an Exercise Assistant Application which can help to increase effectiveness of Eye Excercise. We Detect eye gaze of user using Computer Vision and Pretrained Machine Learning model. we check it with eye gaze corrdianates of Instructor and show user a live score of Excercise Effectiveness. We also want our Exercise Assistant to be voice enabled to instruct and motivate users for Excercise.
 
 ## How we get Eye Gaze Vectors:
@@ -11,11 +11,11 @@ We have used Four Pretrained Machine Learning Models from Intel Openvino Toolkit
 3. [Facial Landmarks Detection](https://docs.openvinotoolkit.org/latest/_models_intel_landmarks_regression_retail_0009_description_landmarks_regression_retail_0009.html): Gives coordinates or location for facial landmarks like Eyes, Nose and Mouth
 4. [Gaze Detection Model](https://docs.openvinotoolkit.org/latest/_models_intel_gaze_estimation_adas_0002_description_gaze_estimation_adas_0002.html): Takes Head Pose Coordinates and Eye Landmark as input and predicts Gaze Vector
 
-### 🏛️ The Pipeline⚙️🧵:
+### 🏛️ The Pipeline:
 ![pipeline](/imgs/pipeline.png)
 
 
-## 🏅How we get Exercise Score🏆:
+## How we get Exercise Score:
 We compare Eye Gaze Vector of Instructor and User using Cosine Similarity. 
 ```
 >> from scipy.spatial.distance import cosine
@@ -56,7 +56,7 @@ Above command should give output like this image
 ![optimizer_output](/imgs/image_classification_script_output_win.png)
 
 
-## Demo🔎:
+## 🔎Demo:
 
 Step1. Clone the Repository using `git clone https://github.com/bhadreshpsavani/Computer-Pointer-Controller.git`
 
@@ -91,7 +91,7 @@ Command Line Argument Information:
 - ge : Specify path of xml file of Gaze Estimation model
 - i : cam for Webcam
  
-## Documentation🗞️📚: 
+## 📚Documentation: 
 
 ### Project Structure:
 
