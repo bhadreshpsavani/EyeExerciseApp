@@ -96,6 +96,7 @@ Command Line Argument Information:
 ### Project Structure:
 
 ![project_structure](/imgs/project_structure.png)
+
 **bin**: This folder has `demo.mp4` file which we are using for Eye Excercise Video
 
 **imgs**: It contains images used in this project for documentations and results
