@@ -120,7 +120,7 @@ This folder has 4 model class files that has methods to load model and perform i
 ## ✨Team:
 * [Bhadresh Savani](https://github.com/bhadreshpsavani)
 * [Pakeeza](https://github.com/Hotaru29)
-* [Erin Song](https://www.linkedin.com/in/erinsong1/)
+* [Erin Song](https://github.com/sagabanana)
 * [Richa](https://www.linkedin.com/in/richaphd/)
 * [Jose Mariscal](https://github.com/jgmarsm) 
 
