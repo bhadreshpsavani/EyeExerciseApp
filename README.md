@@ -1,4 +1,4 @@
-#👀Eye Excercise App👀:
+# 👀Eye Excercise App👀
 The goal of the Eye Exercise Application is to help increase effectiveness of eye excercise. We detect eye gaze of a user using computer vision and pretrained machine learning models. We check it with eye gaze coordianates of instructor and show user a live score of excercise effectiveness. We also want the exercise assistant to be voice enabled to instruct and motivate users for exercise.
 
 ## How we build eye gaze vectors:
@@ -28,7 +28,7 @@ We compare eye gaze vector of instructor and User using cosine similarity.
 ## Project Set Up and Installation:
 
 Step 1. Download below three softwares:
-1. Microsoft Visual Studio* with C++ 2019, 2017, or 2015 with MSBuild
+1. Microsoft Visual Studio with C++ 2019, 2017, or 2015 with MSBuild
 *If you want to use Microsoft Visual Studio 2019, you are required to install CMake 3.14.
 2. CMake 3.4 or higher 64-bit
 3. Python 3.6.5 64-bit
