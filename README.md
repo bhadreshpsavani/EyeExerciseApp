@@ -58,7 +58,7 @@ Above commands should give output like this image
 ![demoVideo](/bin/EyeExcerciseDemoVideo.gif)
 
 ### Instructions: 
-Step 1. Clone the repository using `git clone https://github.com/bhadreshpsavani/Computer-Pointer-Controller.git`
+Step 1. Clone the repository using `git clone https://github.com/bhadreshpsavani/EyeExerciseApp.git`
 
 Step 2. Create virtual environment using command `python -m venv base` in the command prompt, then activate environment using the commands below,
 ```
