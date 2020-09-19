@@ -56,7 +56,8 @@ Above commands should give output like this image
 ![optimizer_output](/imgs/image_classification_script_output_win.png)
 
 
-## 🔎Demo:
+## 🔎![Demo]((/bin/EyeExcerciseDemoVideo.mp4)):
+![demoVideo](/bin/EyeExcerciseDemoVideo.gif)
 
 ### Instructions: 
 Step 1. Clone the repository using `git clone https://github.com/bhadreshpsavani/Computer-Pointer-Controller.git`
@@ -92,7 +93,7 @@ Command line argument information:
 - ge : Specify path of xml file of gaze estimation model
 - i : cam for Webcam
 
-### Output:
+### Output Video:
 ![demoVideo](/bin/output.gif)
 
 
