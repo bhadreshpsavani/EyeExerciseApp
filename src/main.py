@@ -196,21 +196,26 @@ def main():
             logger.warning("Could predict using model" + str(e) + " for frame " + str(frame_count))
             continue
 
-        # image = cv2.resize(frame, (500, 500))
-        # frame = np.flip(frame, 1)
+        if not len(preview_flags) == 0:
+            preview_frame = draw_preview(
+                frame, 'ff', cropped_image, left_eye_image, right_eye_image,
+                face_cords, eye_cords, pose_output, gaze_vector)
+            cropped_image = np.hstack((cv2.resize(ex_frame, (500, 500)), cv2.resize(preview_frame, (500, 500))))
 
-        # if not len(preview_flags) == 0:
-        #     preview_frame = draw_preview(
-        #         frame, 'ff', cropped_image, left_eye_image, right_eye_image,
-        #         face_cords, eye_cords, pose_output, gaze_vector)
-        #     # image = np.hstack((cv2.resize(ex_frame, (500, 500)), cv2.resize(preview_frame, (500, 500))))
-
-        score = cosine(exercise_gaze_df.iloc[frame_count-1], gaze_vector)
+        instructor_gaze_vector = exercise_gaze_df.iloc[frame_count - 1].values
+        score = cosine(instructor_gaze_vector, gaze_vector)
         if score > 0.1:
             total_score += 1
 
         # show score on output video
-        cv2.putText(ex_frame, "Gaze Match Score : {}".format(total_score), (20, 40), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 0), 2)
+        cv2.putText(ex_frame, "Instructor Gaze Vector: {} ".format(instructor_gaze_vector), (40, 60), cv2.FONT_HERSHEY_COMPLEX, 1,
+                    (0, 0, 0), 2)
+        cv2.putText(ex_frame, "User Gaze Vector: {}".format(gaze_vector), (40, 100), cv2.FONT_HERSHEY_COMPLEX, 1,
+                    (0, 0, 0), 2)
+        cv2.putText(ex_frame, "Gaze Match Score : {}".format(total_score), (40, 145), cv2.FONT_HERSHEY_COMPLEX, 1.5, (0, 0, 0), 2)
+        ex_frame = cv2.rectangle(ex_frame, (20, 20), (1200, 160), (0, 0, 0), 2)
+
+
         image = np.hstack((cv2.resize(ex_frame, (500, 500)), cv2.resize(cropped_image, (500, 500))))
 
         cv2.imshow('preview', image)
