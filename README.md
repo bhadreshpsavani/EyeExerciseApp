@@ -1,4 +1,4 @@
-# 👀Eye Excercise App👀
+# 👀[Eye Excercise App](https://github.com/bhadreshpsavani/EyeExerciseApp)👀
 The goal of the Eye Exercise Application is to help increase effectiveness of eye excercise. We detect eye gaze of a user using computer vision and pretrained machine learning models. We check it with eye gaze coordianates of instructor and show user a live score of excercise effectiveness. We also want the exercise assistant to be voice enabled to instruct and motivate users for exercise.
 
 ## How we build eye gaze vectors:
@@ -13,7 +13,6 @@ We have used four pretrained machine learning models from OpenVINO™ toolkit, s
 
 ### 🏛️ The Pipeline:
 ![pipeline](/imgs/pipeline.png)
-
 
 ## How we get Exercise Score:
 We compare eye gaze vector of instructor and User using cosine similarity. 
@@ -119,6 +118,10 @@ This folder has 4 model class files that has methods to load model and perform i
 * `main.py` file used to run complete pipeline of project. It has object of all the other class files in the folder
 * `input_feeder.py` is utility to load local video or webcam feed
 
+### Technology:
+* Computer Vision
+* Openvino Toolkit
+* Python
 
 ## ✨Team:
 * [Bhadresh Savani](https://github.com/bhadreshpsavani)
@@ -126,7 +129,6 @@ This folder has 4 model class files that has methods to load model and perform i
 * [Erin Song](https://github.com/sagabanana)
 * [Richa](https://www.linkedin.com/in/richaphd/)
 * [Jose Mariscal](https://github.com/jgmarsm) 
-
 
 ## 🧱Road Map:
 - [x] Create end to end pipeline to extract eye gaze coordinates
