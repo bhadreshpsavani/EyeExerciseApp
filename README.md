@@ -117,13 +117,13 @@ This folder has 4 model class files that has methods to load model and perform i
 * `main.py` file used to run complete pipeline of project. It has object of all the other class files in the folder
 * `input_feeder.py` is utility to load local video or webcam feed
 
-### Technology:
+## :bulb:Technology:
 * Computer Vision
 * Openvino Toolkit
 * Python
 * Microsoft Azure for Deployment(Future Step)
 
-## Challenges:
+## :dart:Challenges:
 * Reduce lag between Instructor and User Video
 * Handle Different different lighting conditions
 * Increase Inference Speed
@@ -135,7 +135,7 @@ This folder has 4 model class files that has methods to load model and perform i
 * [Richa](https://www.linkedin.com/in/richaphd/)
 * [Jose Mariscal](https://github.com/jgmarsm) 
 
-## 🧱Road Map:
+## :checkered_flag:Road Map:
 - [x] Create end to end pipeline to extract eye gaze coordinates
 - [x] Create pipeline for getting eye gaze coordinates for excersice video
 - [x] Create pipeline and UI for webcam video
