@@ -54,7 +54,6 @@ demo_squeezenet_download_convert_run.bat
 Above commands should give output like this image
 ![optimizer_output](/imgs/image_classification_script_output_win.png)
 
-
 ## 🔎[Demo]((/bin/EyeExcerciseDemoVideo.mp4)):
 ![demoVideo](/bin/EyeExcerciseDemoVideo.gif)
 
