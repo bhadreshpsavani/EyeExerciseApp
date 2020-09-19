@@ -95,6 +95,7 @@ Command line argument information:
 ### Output:
 ![demoVideo](/bin/output.gif)
 
+
 ## 📚Documentation: 
 
 ### Project Structure:
@@ -117,12 +118,14 @@ This folder has 4 model class files that has methods to load model and perform i
 * `main.py` file used to run complete pipeline of project. It has object of all the other class files in the folder
 * `input_feeder.py` is utility to load local video or webcam feed
 
+
 ## ✨Team:
 * [Bhadresh Savani](https://github.com/bhadreshpsavani)
 * [Pakeeza](https://github.com/Hotaru29)
 * [Erin Song](https://github.com/sagabanana)
 * [Richa](https://www.linkedin.com/in/richaphd/)
 * [Jose Mariscal](https://github.com/jgmarsm) 
+
 
 ## 🧱Road Map:
 - [x] Create end to end pipeline to extract eye gaze coordinates
