@@ -1,8 +1,10 @@
 # 👀[Eye Excercise App](https://github.com/bhadreshpsavani/EyeExerciseApp)👀
-Our eyes are continuously fixed on the computer monitor during the day and occasionally shift to the smartphone, followed by eye grabbing shows on television.
-This constant strain and stress has given rise to eye problems. Eye Exercises app is a good way to periodically maintain eyesight and vision. It is useful for reducing the symptoms of numerous eye disorders (eye problems) like myopia (nearsightedness), hyperopia (farsightedness), astigmatism or eye straining.
+![EyeExerciseApp](/imgs/EyeExcerciseApp.jpg)
 
-The goal of the Eye Exercise Application is to help increase effectiveness of eye exercise. We detect eye gaze of a user using computer vision and pretrained machine learning models. We check it with eye gaze coordianates of instructor and show user a live score of exercise effectiveness. We also want the exercise assistant to be voice enabled to instruct and motivate users for exercise.
+Our eyes are continuously fixed on the computer monitor during the day and occasionally shift to the smartphone, followed by eye grabbing shows on television.
+This constant strain and stress has given rise to eye problems. Eye Exercises app is a good way to periodically maintain eyesight and vision. It is useful for reducing the symptoms of numerous **eye disorders** (eye problems) like **myopia** (nearsightedness), **hyperopia** (farsightedness), **astigmatism** or **eye straining**.
+
+The goal of the Eye Exercise Application is to help increase **effectiveness of eye exercise**. We detect eye gaze of a user using computer vision and pretrained machine learning models. We check it with eye gaze coordianates of instructor and show user a live score of exercise effectiveness. We also want the exercise assistant to be voice enabled to instruct and motivate users for exercise.
 
 ## How we build eye gaze vectors:
 ![demoVideo](/bin/gaze_detection.gif)
