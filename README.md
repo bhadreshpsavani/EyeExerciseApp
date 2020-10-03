@@ -1,5 +1,4 @@
 # 👀[Eye Excercise App](https://github.com/bhadreshpsavani/EyeExerciseApp)👀
-![EyeExerciseApp](/imgs/EyeExcerciseApp.jpg)
 
 Our eyes are continuously fixed on the computer monitor during the day and occasionally shift to the smartphone, followed by eye grabbing shows on television.
 This constant strain and stress has given rise to eye problems. Eye Exercises app is a good way to periodically maintain eyesight and vision. It is useful for reducing the symptoms of numerous **eye disorders** (eye problems) like **myopia** (nearsightedness), **hyperopia** (farsightedness), **astigmatism** or **eye straining**.
@@ -133,6 +132,8 @@ This folder has 4 model class files that has methods to load model and perform i
 * Handle Different different lighting conditions
 * Increase Inference Speed
 
+![EyeExerciseApp](/imgs/EyeExcerciseApp.jpg)
+
 ## ✨Team:
 * [Bhadresh Savani](https://github.com/bhadreshpsavani)
 * [Pakeeza](https://github.com/Hotaru29)
@@ -149,3 +150,7 @@ This folder has 4 model class files that has methods to load model and perform i
 - [ ] Enable app with voice assistance
 - [ ] Deploy application to Microsoft Azure Cloud
 - [ ] Create a mobile app
+
+## References:
+- This repository is taking codes for detection and Gaze Prediction from my earlier project [Computer Pointer Controller](https://github.com/bhadreshpsavani/Computer-Pointer-Controller).
+- Few images and Video file is taken from Udacity Intel Edge AI Nenodegree Program Project 3 (Computer Pointer Controller)
